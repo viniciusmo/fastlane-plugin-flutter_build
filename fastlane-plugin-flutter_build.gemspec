@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.author        = 'viniciusmo'
   spec.email         = 'viniciusoliveiravmo@gmail.com'
 
-  spec.summary       = 'Build our project directly from your lane.'
+  spec.summary       = 'Build your flutter project directly from your lane.'
   spec.homepage      = "https://github.com/viniciusmo/fastlane-plugin-flutter_build"
   spec.license       = "MIT"
 
