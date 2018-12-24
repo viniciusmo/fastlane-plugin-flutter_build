@@ -2,7 +2,12 @@ module Fastlane
   module Actions
     class FlutterBuildAction < Action
       def self.run(params)
-        UI.message("The flutter_build plugin is working!")
+        root_folder = __dir__
+        if(root_folder == "ios") then
+          system("cd .. && flutter build ios --release --no-codesign")
+        elsif(root_folder == "android") then
+          system("cd .. && flutter build  apk --release")
+        end
       end
 
       def self.description
