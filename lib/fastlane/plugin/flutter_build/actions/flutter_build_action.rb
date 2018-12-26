@@ -2,7 +2,7 @@ module Fastlane
   module Actions
     class FlutterBuildAction < Action
       def self.run(params)
-        root_folder = __dir__
+        root_folder = Dir.pwd
         print(root_folder)
         if(root_folder.include?("ios")) then
           system("cd .. && flutter build ios --release --no-codesign")
