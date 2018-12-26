@@ -4,9 +4,9 @@ module Fastlane
       def self.run(params)
         root_folder = __dir__
         print(root_folder)
-        if(root_folder.include?("ios") then
+        if(root_folder.include?("ios")) then
           system("cd .. && flutter build ios --release --no-codesign")
-        elsif(root_folder.include?("android") then
+        elsif(root_folder.include?("android")) then
           system("cd .. && flutter build  apk --release")
         end
       end
