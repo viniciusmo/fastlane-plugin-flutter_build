@@ -6,7 +6,7 @@ module Fastlane
         if(current_folder.include?("ios")) then
           system("cd .. && flutter build ios --release --no-codesign")
         elsif(current_folder.include?("android")) then
-          system("cd .. && flutter build  apk --release")
+          system("cd .. && flutter build  "+params[:type]+" --release")
         end
       end
 
@@ -29,11 +29,12 @@ module Fastlane
 
       def self.available_options
         [
-          # FastlaneCore::ConfigItem.new(key: :your_option,
-          #                         env_name: "FLUTTER_BUILD_YOUR_OPTION",
-          #                      description: "A description of your option",
-          #                         optional: false,
-          #                             type: String)
+          FastlaneCore::ConfigItem.new(key: :type,
+                                   env_name: "FLUTTER_BUILD_TYPE",
+                                description: "Choose build type",
+                                   optional: false,
+                                       type: String,
+                                       default_value: 'apk')
         ]
       end
 
